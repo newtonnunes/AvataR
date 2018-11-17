@@ -4,9 +4,3 @@
 /robots.txt RobotsR GET
 
 / HomeR GET
-
-/cadastro   CadastroR            GET POST
-/login      LoginR               GET POST
-/logout     LogoutR              POST
-
-/admin      AdminR               GET

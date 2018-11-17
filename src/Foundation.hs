@@ -19,6 +19,8 @@ data App = App
     , appLogger      :: Logger
     }
 
+mkMessage "App" "messages" "en"
+
 mkYesodData "App" $(parseRoutesFile "config/routes")
 
 instance Yesod App where
