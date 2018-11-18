@@ -17,7 +17,7 @@ widgetFooter = $(whamletFile "templates/footer.hamlet")
 getHomeR :: Handler Html
 getHomeR = do 
     msg <- getMessage
-    logado <- lookupSession "_USR"
+    sess <- lookupSession "_USR"
     defaultLayout $ do 
         toWidgetHead [hamlet|
             <script src=@{StaticR js_jquery331_js}>

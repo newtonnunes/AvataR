@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b3b1b5a2b6e4a801dbafbf347487303c2986b5c212216b5f89844697e04a463f
+-- hash: 3441ac27bbcba0ef11e50e8a771e6246a4ce3fcd27c99c252e1ba8fc00a69dfc
 
 name:           avataR
 version:        0.0.0
@@ -24,8 +24,10 @@ library
   exposed-modules:
       Application
       Foundation
+      Handler.Cadastro
       Handler.Common
       Handler.Home
+      Handler.Login
       Import
       Import.NoFoundation
       Model

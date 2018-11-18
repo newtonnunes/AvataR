@@ -1,0 +1,8 @@
+$maybe mensa <- msg
+    <div class="alert alert-danger">
+        #{mensa}
+
+<div class="container">
+    <form action=@{CadastroR} method=post enctype=#{enctype}>
+        ^{widgetCad}
+        <input type="submit" value="_{MsgCad}">
