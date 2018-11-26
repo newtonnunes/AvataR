@@ -10,9 +10,30 @@ header,footer {
     text-align:center;
 }
 
+input, select {
+    width: 100%;
+    padding: 8px 16px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align:center;
+}
+
+.borda {
+    margin: 50px 50px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 2px solid #f2f2f2;
+    padding: 20px;
+}
+
 .leftNav, .releted-content{
 padding:5px;
-/*background-color:lightgray;*/
 min-height:730px;
 }
 
@@ -44,3 +65,22 @@ min-height:730px;
 .tooltip-inner {
     background-color:forestgreen;
 }
+
+.btnhv {
+  background-color: #008CBA;
+  border-radius: 4px;
+  border: 2px solid #00526e;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btnhv:hover {opacity: 1}

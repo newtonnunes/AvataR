@@ -1,10 +1,10 @@
     ^{widgetNav}
 
-    <div class="jumbotron">
+    <div id="conteudo">
         <h1>
             _{MsgHead}
         <h2>
             _{MsgHead2}
         
-    <footer class="container">
+    <footer class="footer">
         ^{widgetFooter}

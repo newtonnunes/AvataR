@@ -7,3 +7,6 @@ Name: Name
 Pass: Password
 PassC: Password confirm
 Cad: Sign up
+
+Cdst: Create a new AvataR account
+Login: Log in to your AvataR account

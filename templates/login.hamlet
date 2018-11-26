@@ -1,8 +1,15 @@
-$maybe mensa <- msg
-    <div class="alert alert-danger">
-        #{mensa}
+    ^{widgetNav}
 
-<div class="container">
-    <form action=@{LoginR} method=post enctype=#{enctype}>
-        ^{widgetLogin}
-        <input type="submit" value="Login">
+<div id="conteudo" class="container">
+    $maybe mensa <- msg
+        <div class="alert alert-danger">
+            #{mensa}
+    <div class="borda">
+        <h2>
+            _{MsgLogin}
+        <form action=@{LoginR} method=post enctype=#{enctype}>
+            ^{widgetLogin}
+            <button class="btnhv"><span>Login
+        
+<footer class="footer">
+    ^{widgetFooter}

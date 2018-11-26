@@ -12,8 +12,14 @@ import Text.Julius
 import Database.Persist.Sql
 import Control.Monad.Zip
 
+widgetNav :: Widget
+widgetNav = $(whamletFile "templates/navbar.hamlet")
+
+widgetFooter :: Widget
+widgetFooter = $(whamletFile "templates/footer.hamlet")
+
 formCadastro :: Form (Usuario, Text)
-formCadastro = renderBootstrap $  pure (,)
+formCadastro = renderBootstrap $ pure (,)
     <*> (Usuario 
             <$> areq textField "Name" Nothing
             <*> areq emailField "E-mail" Nothing 

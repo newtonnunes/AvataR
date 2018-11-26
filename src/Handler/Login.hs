@@ -11,6 +11,12 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 
+widgetNav :: Widget
+widgetNav = $(whamletFile "templates/navbar.hamlet")
+
+widgetFooter :: Widget
+widgetFooter = $(whamletFile "templates/footer.hamlet")
+
 formLogin :: Form (Text, Text)
 formLogin = renderBootstrap $ pure (,)
     <*> areq emailField "E-mail: " Nothing

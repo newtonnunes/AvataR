@@ -7,3 +7,6 @@ Name: Nome
 Pass: Senha
 PassC: Confirme sua senha
 Cad: Cadastrar
+
+Cdst: Criar uma nova conta no AvataR
+Login: Faça login em sua conta do AvataR
