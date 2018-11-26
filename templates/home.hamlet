@@ -1,9 +1,10 @@
-<div class="container">
+    ^{widgetNav}
+
     <div class="jumbotron">
         <h1>
             _{MsgHead}
         <h2>
             _{MsgHead2}
-
-<footer class="container">
-    ^{widgetFooter}
+        
+    <footer class="container">
+        ^{widgetFooter}

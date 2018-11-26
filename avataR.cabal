@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3441ac27bbcba0ef11e50e8a771e6246a4ce3fcd27c99c252e1ba8fc00a69dfc
+-- hash: c0337d0ba3482dab08749827a58a1e381016fff9ff966bf04e321f7ac5306931
 
 name:           avataR
 version:        0.0.0
@@ -27,6 +27,7 @@ library
       Handler.Cadastro
       Handler.Common
       Handler.Home
+      Handler.HomeHTML
       Handler.Login
       Import
       Import.NoFoundation

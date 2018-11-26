@@ -5,6 +5,8 @@
 
 /         HomeR     GET
 
+/home2    HomeHTMLR GET
+
 /cadastro CadastroR GET POST
 /login    LoginR    GET POST
 /logout   LogoutR       POST
