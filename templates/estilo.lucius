@@ -1,6 +1,8 @@
 body{
-    margin-top:55px;
+    font-size:18px
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
+
 header,footer {
     height:100px;
     background:-webkit-linear-gradient(left,#529525 0%,#e8f710 130%);
@@ -10,26 +12,26 @@ header,footer {
     text-align:center;
 }
 
+h2 {
+    text-align:center;
+}
+
 input, select {
     width: 100%;
-    padding: 8px 16px;
-    margin: 8px 0;
+    padding: 4px 8px;
+    margin: auto;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-h2 {
-    text-align:center;
-}
-
 .borda {
-    margin: 50px 50px;
+    margin: 72px 30px 30px 30px;
     border-radius: 5px;
     background-color: #ffffff;
     border: 2px solid #f2f2f2;
-    padding: 20px;
+    padding: 28px;
 }
 
 .leftNav, .releted-content{
@@ -67,20 +69,32 @@ min-height:730px;
 }
 
 .btnhv {
-  background-color: #008CBA;
-  border-radius: 4px;
-  border: 2px solid #00526e;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  width: 100%;
+    background-color: #008CBA;
+    border-radius: 4px;
+    border: 2px solid #00526e;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 12px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 .btnhv:hover {opacity: 1}
+
+.logoubtn {
+    margin: 8px 8px;
+    background-color: Transparent;
+    border-radius: 4px;
+    border: solid 2px $f2f2f2;
+    padding: 4px 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.logoubtn:hover {opacity: 1}

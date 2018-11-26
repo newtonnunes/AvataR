@@ -11,16 +11,16 @@ import Text.Lucius
 import Text.Julius
 import Prelude (read)
             
-widgetNav :: Widget
-widgetNav = $(whamletFile "templates/navbar.hamlet")
+widgetNav :: Maybe Text -> Widget
+widgetNav sess = $(whamletFile "templates/navbar.hamlet")
 
 widgetFooter :: Widget
 widgetFooter = $(whamletFile "templates/footer.hamlet")
 
 getHomeR :: Handler Html
 getHomeR = do 
-  --  msg <- getMessage
-  --  sess <- lookupSession "_USR"
+    msg <- getMessage
+    sess <- lookupSession "_USR"
     defaultLayout $ do 
         setTitle "AvataR"
         toWidgetHead [hamlet|
@@ -29,7 +29,7 @@ getHomeR = do
             <script src=@{StaticR js_jquery_js}>
         |]
         addStylesheet $ StaticR css_bootstrap_css
-        toWidget $(luciusFile "templates/home.lucius")
-        toWidgetHead $(juliusFile "templates/home.julius")
+        toWidget $(luciusFile "templates/estilo.lucius")
+        toWidgetHead $(juliusFile "templates/script.julius")
         $(whamletFile "templates/home.hamlet")
         

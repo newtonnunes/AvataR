@@ -11,8 +11,8 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 
-widgetNav :: Widget
-widgetNav = $(whamletFile "templates/navbar.hamlet")
+widgetNav :: Maybe Text -> Widget
+widgetNav sess = $(whamletFile "templates/navbar.hamlet")
 
 widgetFooter :: Widget
 widgetFooter = $(whamletFile "templates/footer.hamlet")
@@ -26,8 +26,17 @@ getLoginR :: Handler Html
 getLoginR = do 
     (widgetLogin, enctype) <- generateFormPost formLogin
     msg <- getMessage
+    sess <- lookupSession "_USR"
     defaultLayout $ do 
+        setTitle "Login AvataR"
+        toWidgetHead [hamlet|
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <script src=@{StaticR js_bootstrap_js}>
+            <script src=@{StaticR js_jquery_js}>
+        |]
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/estilo.lucius")
+        toWidgetHead $(juliusFile "templates/script.julius")
         $(whamletFile "templates/login.hamlet")
 
 postLoginR :: Handler Html
@@ -41,14 +50,12 @@ postLoginR = do
                 Just (Entity usrid usuario) -> do 
                     setSession "_USR" (pack (show usuario))
                     setMessage [shamlet|
-                        <h1>
-                            #{usuarioNome usuario} logado com sucesso!
+                        #{usuarioNome usuario} logado com sucesso!
                     |]
                     redirect HomeR
                 Nothing -> do 
                     setMessage [shamlet|
-                        <h1>
-                            Usuário não encontrado
+                        Usuário não encontrado.
                     |]
                     redirect LoginR
         _ -> redirect LoginR

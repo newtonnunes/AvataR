@@ -14,9 +14,14 @@
                 <li>
                     <a href="#"> About
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href=@{LoginR}>
-                        <span class="glyphicon glyphicon-log-in"> Login
-                <li>
-                    <a href=@{CadastroR}>
-                        <span class="glyphicon glyphicon-user"> Register
+                $maybe usuario <- sess
+                    <li>
+                        <form action=@{LogoutR} method=post>
+                            <button class="logoubtn"><span class="glyphicon glyphicon-log-out"> Logout
+                $nothing
+                    <li>
+                        <a href=@{LoginR}>
+                            <span class="glyphicon glyphicon-log-in"> Login
+                    <li>
+                        <a href=@{CadastroR}>
+                            <span class="glyphicon glyphicon-user"> Register

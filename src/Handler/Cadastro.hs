@@ -12,8 +12,8 @@ import Text.Julius
 import Database.Persist.Sql
 import Control.Monad.Zip
 
-widgetNav :: Widget
-widgetNav = $(whamletFile "templates/navbar.hamlet")
+widgetNav :: Maybe Text -> Widget
+widgetNav sess = $(whamletFile "templates/navbar.hamlet")
 
 widgetFooter :: Widget
 widgetFooter = $(whamletFile "templates/footer.hamlet")
@@ -31,8 +31,17 @@ getCadastroR :: Handler Html
 getCadastroR = do 
     (widgetCad, enctype) <- generateFormPost formCadastro
     msg <- getMessage
+    sess <- lookupSession "_USR"
     defaultLayout $ do 
+        setTitle "Cadastro AvataR"
+        toWidgetHead [hamlet|
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <script src=@{StaticR js_bootstrap_js}>
+            <script src=@{StaticR js_jquery_js}>
+        |]
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/estilo.lucius")
+        toWidgetHead $(juliusFile "templates/script.julius")
         $(whamletFile "templates/cadastro.hamlet")
 
 postCadastroR :: Handler Html
@@ -43,14 +52,12 @@ postCadastroR = do
             if (usuarioSenha usr) == passwordC then do
                 runDB $ insert usr 
                 setMessage [shamlet|
-                    <h1>
                         Usuario cadastrado!
                 |]
                 redirect HomeR
             else do 
                 setMessage [shamlet|
-                    <h1>
-                        Senhas não conferem
+                        Senhas não conferem.
                 |]
                 redirect CadastroR
         _ -> redirect CadastroR

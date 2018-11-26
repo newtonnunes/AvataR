@@ -1,15 +1,16 @@
-    ^{widgetNav}
+^{widgetNav sess}
 
-<div id="conteudo" class="container">
+<div id="conteudo">
     $maybe mensa <- msg
         <div class="alert alert-danger">
-            #{mensa}
-    <div class="borda">
-        <h2>
-            _{MsgLogin}
-        <form action=@{LoginR} method=post enctype=#{enctype}>
-            ^{widgetLogin}
-            <button class="btnhv"><span>Login
+            <span class="glyphicon glyphicon-exclamation-sign"> #{mensa}
+    <div class="container">    
+        <div class="borda">
+            <h2>
+                _{MsgLogin}
+            <form action=@{LoginR} method=post enctype=#{enctype}>
+                ^{widgetLogin}
+                <button class="btnhv">Login
         
 <footer class="footer">
     ^{widgetFooter}
