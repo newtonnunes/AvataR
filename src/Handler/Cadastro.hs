@@ -11,9 +11,10 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 import Control.Monad.Zip
+import Prelude (read)
 
 widgetNav :: Maybe Text -> Widget
-widgetNav sess = $(whamletFile "templates/navbar.hamlet")
+widgetNav logado = $(whamletFile "templates/navbar.hamlet")
 
 widgetFooter :: Widget
 widgetFooter = $(whamletFile "templates/footer.hamlet")
@@ -31,18 +32,18 @@ getCadastroR :: Handler Html
 getCadastroR = do 
     (widgetCad, enctype) <- generateFormPost formCadastro
     msg <- getMessage
-    sess <- lookupSession "_USR"
+    logado <- lookupSession "_USR"
     defaultLayout $ do 
         setTitle "Cadastro AvataR"
         toWidgetHead [hamlet|
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-            <script src=@{StaticR js_bootstrap_js}>
             <script src=@{StaticR js_jquery_js}>
+            <script src=@{StaticR js_bootstrap_js}>
         |]
         addStylesheet $ StaticR css_bootstrap_css
-        toWidget $(luciusFile "templates/estilo.lucius")
-        toWidgetHead $(juliusFile "templates/script.julius")
         $(whamletFile "templates/cadastro.hamlet")
+        toWidget $(luciusFile "templates/estilo.lucius")
+        toWidgetBody $(juliusFile "templates/script.julius")
 
 postCadastroR :: Handler Html
 postCadastroR = do 

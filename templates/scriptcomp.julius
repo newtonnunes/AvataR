@@ -1,0 +1,15 @@
+$(function() {
+    $("#menu a").click(function( e ) {
+        e.preventDefault();
+        var href = $( this ).attr( 'href' );
+        $( "#conteudo" ).load( href +" #conteudo");
+    });
+    
+    $('input[type="button"].btnforeground').click(function(){
+        $('div.ctn > div.foreground').removeClass().addClass('foreground').addClass($(this).attr('data-class'));
+    });
+        
+    $('input[type="button"].btnbackground').click(function(){
+        $('div.ctn > div.background').removeClass().addClass('background').addClass($(this).attr('data-class'));
+    });
+});

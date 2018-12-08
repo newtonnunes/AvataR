@@ -1,16 +1,22 @@
-^{widgetNav sess}
+<div class="header">
+    ^{widgetNav logado}
 
 <div id="conteudo">
     $maybe mensa <- msg
         <div class="alert alert-danger">
             <span class="glyphicon glyphicon-exclamation-sign"> #{mensa}
-    <div class="container">
-        <div class="borda">
-            <h2>
-                _{MsgCdst}
-            <form action=@{CadastroR} method=post enctype=#{enctype}>
-                ^{widgetCad}
-                <button class="btnhv">_{MsgCad}
-
+    <div class="row">
+        <div class="col-3 left">
+            <div class="blank">
+        <div class="col-6">
+            <div class="borda">
+                <h2>
+                    _{MsgCdst}
+                <form action=@{CadastroR} method=post enctype=#{enctype}>
+                    ^{widgetCad}
+                        <p>
+                        <button class="btn btn-info btn-lg btn-block">_{MsgCad}
+        <div class="col-3 right">
+            <div class="blank">
 <footer class="footer">
     ^{widgetFooter}

@@ -1,0 +1,23 @@
+<div class="header">
+    ^{widgetNav logado}
+
+<div id="conteudo">
+    <div class="row">
+        <div class="col-3 left">
+            <div class="blank">
+                <h2>Foreground Options
+                <input type="button" class="btnforeground" data-class="foreground-1" value="Frente 1">
+                <input type="button" class="btnforeground" data-class="foreground-2" value="Frente 2">
+                <input type="button" class="btnforeground" data-class="foreground-3" value="Frente 3">
+                <h2>Background Options
+                <input type="button" class="btnbackground" data-class="background-1" value="Fundo 1">
+                <input type="button" class="btnbackground" data-class="background-2" value="Fundo 2">
+                <input type="button" class="btnbackground" data-class="background-3" value="Fundo 3">
+        <div class="col-6">
+            <div class="ctn">
+                <div class="foreground foreground-1">&nbsp;
+                <div class="background background-1">&nbsp;
+        <div class="col-3 right">
+            <div class="blank">
+<footer class="footer">
+    ^{widgetFooter}

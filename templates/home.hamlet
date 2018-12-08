@@ -1,13 +1,16 @@
-^{widgetNav sess}
+<div class="header">
+    ^{widgetNav logado}
     
 <div id="conteudo">
     $maybe mensa <- msg
         <div class="alert alert-success">
             <span class="glyphicon glyphicon-ok"> #{mensa}
-    <h1>
-        _{MsgHead}
-    <h2>
-        _{MsgHead2}
-        
+    <div class="row">
+        <div class="col-6">
+            <div class="container">
+                <h1>
+                    _{MsgHead}
+                <h2>
+                    _{MsgHead2}
 <footer class="footer">
     ^{widgetFooter}

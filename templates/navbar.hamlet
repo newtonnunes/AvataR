@@ -9,15 +9,33 @@
             <a class="navbar-brand" href="#"> AvataR
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active">
+                <li>
                     <a href=@{HomeR}> Home
                 <li>
                     <a href="#"> About
             <ul class="nav navbar-nav navbar-right">
-                $maybe usuario <- sess
+                $maybe usuario <- logado
                     <li>
-                        <form action=@{LogoutR} method=post>
-                            <button class="logoubtn"><span class="glyphicon glyphicon-log-out"> Logout
+                        <a href=@{EstudioR}> Estudio
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Bem vindo, #{usuarioNome $ read $ unpack usuario} <span class="caret">
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <p class="text-center">
+                                    <div class="col-8">
+                                        <p class="text-left"><strong>Nome Sobrenome
+                                        <p class="text-left small">email@email.com
+                                        <p class="text-left">
+                                            <a href="#" class="btn btn-info btn-block btn-sm"> Atualizar Dados
+                            <li role="separator" class="divider">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form action=@{LogoutR} method=post>
+                                                <button type="submit" class="btn btn-info btn-sm btn-block"><span class="glyphicon glyphicon-log-out"> Logout
                 $nothing
                     <li>
                         <a href=@{LoginR}>

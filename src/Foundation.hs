@@ -10,6 +10,7 @@ module Foundation where
 import Import.NoFoundation
 import Database.Persist.Sql (ConnectionPool, runSqlPool)
 import Yesod.Core.Types     (Logger)
+import Prelude (read)
 
 data App = App
     { appSettings    :: AppSettings
@@ -19,7 +20,7 @@ data App = App
     , appLogger      :: Logger
     }
 
-mkMessage "App" "messages" "en"
+mkMessage "App" "messages" "pt-br"
 
 mkYesodData "App" $(parseRoutesFile "config/routes")
 
@@ -27,9 +28,11 @@ type Form a = Html -> MForm Handler (FormResult a, Widget)
 
 instance Yesod App where
     makeLogger = return . appLogger
+    authRoute _ = Just LoginR
     isAuthorized HomeR _ = return Authorized
     isAuthorized CadastroR _ = return Authorized
     isAuthorized LoginR _ = return Authorized
+    isAuthorized (StaticR _) _ = return Authorized
     isAuthorized _ _ = ehUsuario
 
 instance YesodPersist App where
@@ -44,8 +47,9 @@ instance RenderMessage App FormMessage where
 instance HasHttpManager App where
     getHttpManager = appHttpManager
 
+ehUsuario :: Handler AuthResult
 ehUsuario = do 
     logado <- lookupSession "_USR"
-    case logado of 
+    case logado of
         Just _ -> return Authorized
         Nothing -> return AuthenticationRequired
